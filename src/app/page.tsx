@@ -121,11 +121,11 @@ export default function Home() {
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/70" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-20 lg:py-24">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6">
               <svg
-                className="h-4 w-4 text-accent-light"
+                className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-accent-light"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={2}
@@ -137,35 +137,35 @@ export default function Home() {
                   d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
                 />
               </svg>
-              <span className="text-white/90 text-sm font-medium tracking-wide">
+              <span className="text-white/90 text-xs sm:text-sm font-medium tracking-wide">
                 AAAHC Accredited Facility
               </span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Welcome to
               <br />
               <span className="text-accent-light">
                 Atlantic Surgery Center
               </span>
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-blue-100 leading-relaxed max-w-xl">
+            <p className="mt-4 sm:mt-6 text-base sm:text-xl text-blue-100 leading-relaxed max-w-xl">
               Providing the most advanced outpatient surgical services in a
               safe, comfortable, and welcoming environment in Daytona Beach,
               Florida since 1994.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 href="/patient-info/what-to-expect"
-                className="inline-flex items-center justify-center rounded-xl bg-accent px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-accent/20 hover:bg-accent-light transition-colors"
+                className="inline-flex items-center justify-center rounded-xl bg-accent px-6 py-3 sm:px-7 sm:py-3.5 text-sm sm:text-base font-semibold text-white shadow-lg shadow-accent/20 hover:bg-accent-light transition-colors"
               >
                 Prepare for Your Visit
                 <ArrowRightIcon className="h-4 w-4 ml-2" />
               </Link>
               <a
                 href="tel:386-239-0021"
-                className="inline-flex items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 px-7 py-3.5 text-base font-semibold text-white hover:bg-white/20 transition-colors"
+                className="inline-flex items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 sm:px-7 sm:py-3.5 text-sm sm:text-base font-semibold text-white hover:bg-white/20 transition-colors"
               >
-                <PhoneIcon className="h-5 w-5 mr-2" />
+                <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                 (386) 239-0021
               </a>
             </div>
@@ -174,7 +174,7 @@ export default function Home() {
       </section>
 
       {/* Quick Links */}
-      <section className="relative -mt-16 z-10">
+      <section className="relative -mt-6 sm:-mt-16 z-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {quickLinks.map((link) => (

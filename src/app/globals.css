@@ -8,11 +8,32 @@
   --color-accent-light: #14b8a6;
   --color-blue-50: #eff6ff;
   --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+  --color-blue-500: #3b82f6;
   --color-blue-600: #2563eb;
   --color-blue-700: #1d4ed8;
+  --color-purple-50: #faf5ff;
+  --color-purple-100: #f3e8ff;
+  --color-purple-500: #a855f7;
+  --color-purple-600: #9333ea;
+  --color-amber-50: #fffbeb;
+  --color-amber-100: #fef3c7;
+  --color-amber-200: #fde68a;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #d97706;
+  --color-amber-800: #92400e;
+  --color-amber-900: #78350f;
   --color-teal-50: #f0fdfa;
+  --color-teal-100: #ccfbf1;
   --color-teal-600: #0d9488;
   --color-teal-700: #0f766e;
+  --color-rose-50: #fff1f2;
+  --color-rose-100: #ffe4e6;
+  --color-rose-500: #f43f5e;
+  --color-rose-600: #e11d48;
+  --color-green-50: #f0fdf4;
+  --color-green-400: #4ade80;
+  --color-green-600: #16a34a;
   --color-slate-50: #f8fafc;
   --color-slate-100: #f1f5f9;
   --color-slate-200: #e2e8f0;
@@ -23,8 +44,8 @@
   --color-slate-700: #334155;
   --color-slate-800: #1e293b;
   --color-slate-900: #0f172a;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
@@ -33,6 +54,3 @@ body {
   font-family: var(--font-sans);
 }
 
-html {
-  scroll-behavior: smooth;
-}

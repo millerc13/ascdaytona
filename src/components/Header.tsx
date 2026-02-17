@@ -2,7 +2,14 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  XMarkIcon,
+  MapPinIcon,
+  PhoneIcon,
+  ClockIcon,
+  EnvelopeIcon,
+} from "@heroicons/react/24/outline";
 import Logo from "@/components/Logo";
 
 const navigation = [
@@ -33,15 +40,31 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       {/* Top bar */}
-      <div className="bg-primary text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-between items-center py-2 text-sm">
-          <div className="flex items-center gap-4">
-            <span>541 Health Blvd, Daytona Beach, FL 32114</span>
-          </div>
-          <div className="hidden sm:flex items-center gap-4">
-            <a href="tel:386-239-0021" className="hover:text-blue-200 transition-colors">
+      <div className="bg-primary text-white text-xs sm:text-sm">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-between items-center py-2">
+          <div className="flex items-center gap-4 sm:gap-6">
+            <a
+              href="https://maps.google.com/?q=541+Health+Blvd+Daytona+Beach+FL+32114"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:flex items-center gap-1.5 hover:text-blue-200 transition-colors"
+            >
+              <MapPinIcon className="h-3.5 w-3.5 text-accent-light shrink-0" />
+              541 Health Blvd, Daytona Beach, FL 32114
+            </a>
+            <a
+              href="tel:386-239-0021"
+              className="flex items-center gap-1.5 hover:text-blue-200 transition-colors"
+            >
+              <PhoneIcon className="h-3.5 w-3.5 text-accent-light shrink-0" />
               (386) 239-0021
             </a>
+          </div>
+          <div className="hidden md:flex items-center gap-6">
+            <span className="flex items-center gap-1.5">
+              <ClockIcon className="h-3.5 w-3.5 text-accent-light shrink-0" />
+              Mon–Fri 8:00 AM – 5:00 PM
+            </span>
           </div>
         </div>
       </div>
@@ -121,7 +144,7 @@ export default function Header() {
 
         {/* Mobile nav */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-200 py-4">
+          <div className="lg:hidden border-t border-slate-200 py-4 max-h-[calc(100vh-7rem)] overflow-y-auto">
             {navigation.map((item) => (
               <div key={item.name}>
                 <Link

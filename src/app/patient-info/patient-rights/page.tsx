@@ -1,4 +1,12 @@
 import { Metadata } from "next";
+import Link from "next/link";
+import {
+  ShieldCheckIcon,
+  HandRaisedIcon,
+  PhoneIcon,
+  BuildingOffice2Icon,
+  ArrowLeftIcon,
+} from "@heroicons/react/24/outline";
 
 export const metadata: Metadata = {
   title: "Patient Rights & Responsibilities | Atlantic Surgery Center",
@@ -46,7 +54,7 @@ const contacts = [
   },
   {
     name: "AAAHC",
-    org: "",
+    org: "Accreditation Association for Ambulatory Health Care",
     address: "5250 Old Orchard Road #200, Skokie, IL 60077",
     phone: "847-853-6060",
   },
@@ -85,11 +93,26 @@ const contacts = [
 export default function PatientRightsPage() {
   return (
     <>
-      <section className="bg-primary py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="bg-primary py-16 sm:py-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-accent" />
+          <div className="absolute -bottom-16 left-1/3 w-64 h-64 rounded-full bg-white" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Link
+            href="/patient-info"
+            className="inline-flex items-center gap-1.5 text-blue-200 text-sm hover:text-white transition-colors mb-4"
+          >
+            <ArrowLeftIcon className="h-3.5 w-3.5" />
+            Back to Patient Info
+          </Link>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Patient Rights & Responsibilities
           </h1>
+          <p className="mt-4 text-lg text-blue-200 max-w-2xl">
+            We are committed to ensuring every patient is treated with dignity
+            and respect.
+          </p>
         </div>
       </section>
 
@@ -97,16 +120,26 @@ export default function PatientRightsPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-16">
           {/* Rights */}
           <div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">
-              As a Patient, You Have the Right to:
-            </h2>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-12 w-12 rounded-xl bg-blue-100 flex items-center justify-center shrink-0">
+                <ShieldCheckIcon className="h-6 w-6 text-blue-600" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900">
+                  Your Rights
+                </h2>
+                <p className="text-sm text-slate-500">
+                  As a patient, you have the right to:
+                </p>
+              </div>
+            </div>
             <div className="space-y-3">
               {rights.map((right, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-3 bg-white border border-slate-100 rounded-lg p-4"
+                  className="flex items-start gap-4 bg-white border border-slate-100 rounded-xl p-4 hover:shadow-sm transition-shadow"
                 >
-                  <span className="flex items-center justify-center h-6 w-6 rounded-full bg-blue-100 text-primary text-xs font-bold shrink-0 mt-0.5">
+                  <span className="flex items-center justify-center h-7 w-7 rounded-lg bg-accent/10 text-accent text-xs font-bold shrink-0 mt-0.5">
                     {i + 1}
                   </span>
                   <p className="text-slate-600 text-sm leading-relaxed">
@@ -119,16 +152,26 @@ export default function PatientRightsPage() {
 
           {/* Responsibilities */}
           <div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">
-              As a Patient, You Are Responsible for:
-            </h2>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-12 w-12 rounded-xl bg-teal-100 flex items-center justify-center shrink-0">
+                <HandRaisedIcon className="h-6 w-6 text-teal-600" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900">
+                  Your Responsibilities
+                </h2>
+                <p className="text-sm text-slate-500">
+                  As a patient, you are responsible for:
+                </p>
+              </div>
+            </div>
             <div className="space-y-3">
               {responsibilities.map((resp, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-3 bg-white border border-slate-100 rounded-lg p-4"
+                  className="flex items-start gap-4 bg-white border border-slate-100 rounded-xl p-4 hover:shadow-sm transition-shadow"
                 >
-                  <span className="flex items-center justify-center h-6 w-6 rounded-full bg-teal-100 text-teal-700 text-xs font-bold shrink-0 mt-0.5">
+                  <span className="flex items-center justify-center h-7 w-7 rounded-lg bg-teal-50 text-teal-700 text-xs font-bold shrink-0 mt-0.5">
                     {i + 1}
                   </span>
                   <p className="text-slate-600 text-sm leading-relaxed">
@@ -141,10 +184,17 @@ export default function PatientRightsPage() {
 
           {/* Complaints & Contacts */}
           <div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">
-              Questions, Complaints, or Grievances
-            </h2>
-            <p className="text-slate-600 mb-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-12 w-12 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
+                <BuildingOffice2Icon className="h-6 w-6 text-amber-600" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900">
+                  Questions, Complaints, or Grievances
+                </h2>
+              </div>
+            </div>
+            <p className="text-slate-600 mb-8 sm:pl-15">
               If you have any questions regarding your rights or
               responsibilities, complaints or grievances, you may speak to the
               Administrator or management team. The following contact information
@@ -154,13 +204,15 @@ export default function PatientRightsPage() {
               {contacts.map((contact) => (
                 <div
                   key={contact.name}
-                  className="bg-slate-50 rounded-lg p-5 border border-slate-200"
+                  className="bg-white rounded-xl p-5 border border-slate-200 hover:shadow-sm transition-shadow"
                 >
                   <p className="font-semibold text-slate-900 text-sm">
                     {contact.name}
                   </p>
                   {contact.org && (
-                    <p className="text-xs text-slate-500">{contact.org}</p>
+                    <p className="text-xs text-slate-500 mt-0.5">
+                      {contact.org}
+                    </p>
                   )}
                   {contact.address && (
                     <p className="text-xs text-slate-500 mt-1">
@@ -169,8 +221,9 @@ export default function PatientRightsPage() {
                   )}
                   <a
                     href={`tel:${contact.phone}`}
-                    className="text-sm text-primary font-medium hover:underline mt-2 block"
+                    className="inline-flex items-center gap-1.5 text-sm text-primary font-medium hover:underline mt-3"
                   >
+                    <PhoneIcon className="h-3.5 w-3.5" />
                     {contact.phone}
                   </a>
                 </div>

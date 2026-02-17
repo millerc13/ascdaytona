@@ -11,6 +11,7 @@ import {
   StarIcon,
   CheckBadgeIcon,
 } from "@heroicons/react/24/outline";
+import { SectionDivider } from "@/components/SectionDivider";
 
 {/* Custom medical specialty icons matching heroicons style */}
 function KidneyIcon({ className }: { className?: string }) {
@@ -115,7 +116,7 @@ export default function Home() {
             muted
             loop
             playsInline
-            className="h-full w-full object-cover opacity-30"
+            className="h-full w-full object-cover opacity-50"
           >
             <source src="/hero-video.mp4" type="video/mp4" />
           </video>
@@ -181,7 +182,7 @@ export default function Home() {
               <Link
                 key={link.title}
                 href={link.href}
-                className="bg-white rounded-xl shadow-lg border border-slate-100 p-5 hover:shadow-xl hover:-translate-y-1 transition-all duration-200 group"
+                className="bg-white rounded-xl shadow-lg border border-slate-100 border-b-[3px] border-b-accent p-5 hover:shadow-xl hover:-translate-y-1 transition-all duration-200 group"
               >
                 <div className="flex items-center gap-3 mb-2">
                   <div className="h-9 w-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
@@ -201,7 +202,7 @@ export default function Home() {
       </section>
 
       {/* Welcome Section */}
-      <section className="py-20 sm:py-28">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -265,8 +266,10 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider from="white" to="slate" />
+
       {/* Services */}
-      <section className="py-20 sm:py-28 bg-slate-50">
+      <section className="py-16 sm:py-24 bg-slate-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 bg-accent/10 text-accent rounded-full px-4 py-1.5 text-sm font-medium mb-4">
@@ -315,8 +318,10 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider from="slate" to="primary" variant="curve" />
+
       {/* CTA */}
-      <section className="py-20 sm:py-24 bg-gradient-to-br from-primary to-primary-light relative overflow-hidden">
+      <section className="py-16 sm:py-24 bg-gradient-to-br from-primary to-primary-light relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-accent" />
           <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full bg-white" />

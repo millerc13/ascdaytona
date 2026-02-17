@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "@/components/Logo";
 
 export default function Footer() {
   return (
@@ -9,12 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <Logo className="h-12 w-auto" />
-              <div>
-                <p className="font-bold text-lg">Atlantic Surgery Center</p>
-                <p className="text-blue-200 text-sm">Daytona Beach, FL</p>
-              </div>
+            <div className="mb-4">
+              <Image
+                src="/asc-logo-transparent.png"
+                alt="Atlantic Surgery Center"
+                width={240}
+                height={52}
+                className="h-12 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-blue-200 text-sm leading-relaxed">
               Providing the most advanced surgical services in a safe,

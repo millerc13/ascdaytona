@@ -10,6 +10,7 @@ import {
   PhoneIcon,
   ArrowRightIcon,
 } from "@heroicons/react/24/outline";
+import { SectionDivider } from "@/components/SectionDivider";
 
 export const metadata: Metadata = {
   title: "Patient Information | Atlantic Surgery Center",
@@ -119,7 +120,7 @@ export default function PatientInfoPage() {
       </section>
 
       {/* Resources Grid */}
-      <section className="py-16 sm:py-20">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {resources.map((resource) => (
@@ -151,8 +152,10 @@ export default function PatientInfoPage() {
         </div>
       </section>
 
+      <SectionDivider from="white" to="slate" />
+
       {/* Placeholder: Welcoming staff image */}
-      <section className="pb-20">
+      <section className="py-16 sm:py-20 bg-slate-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-2xl overflow-hidden bg-slate-100 h-64 sm:h-80">
             {/* Placeholder: AI image of welcoming medical staff / reception */}

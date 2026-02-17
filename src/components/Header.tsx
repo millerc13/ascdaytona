@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import {
   Bars3Icon,
@@ -10,7 +12,6 @@ import {
   ClockIcon,
   EnvelopeIcon,
 } from "@heroicons/react/24/outline";
-import Logo from "@/components/Logo";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -34,8 +35,12 @@ const navigation = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [patientDropdown, setPatientDropdown] = useState(false);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -72,14 +77,15 @@ export default function Header() {
       {/* Main nav */}
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <Logo className="h-14 w-auto" />
-            <div className="hidden sm:block">
-              <p className="text-lg font-bold text-primary">
-                Atlantic Surgery Center
-              </p>
-              <p className="text-sm text-slate-500">Daytona Beach, FL</p>
-            </div>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/asc-logo-transparent.png"
+              alt="Atlantic Surgery Center"
+              width={280}
+              height={60}
+              className="h-12 sm:h-14 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -94,9 +100,18 @@ export default function Header() {
                 >
                   <Link
                     href={item.href}
-                    className="px-3 py-2 text-sm font-medium text-slate-700 hover:text-primary hover:bg-blue-50 rounded-md transition-colors"
+                    className={`relative px-3 py-2 text-sm font-medium transition-colors ${
+                      isActive(item.href)
+                        ? "text-primary"
+                        : "text-slate-700 hover:text-primary"
+                    }`}
                   >
                     {item.name}
+                    <span
+                      className={`absolute -bottom-1.5 left-3 right-3 h-0.5 bg-accent rounded-full transition-transform duration-300 origin-left ${
+                        isActive(item.href) ? "scale-x-100" : "scale-x-0"
+                      }`}
+                    />
                   </Link>
                   {patientDropdown && (
                     <div className="absolute left-0 top-full mt-0 w-56 rounded-lg bg-white shadow-lg ring-1 ring-slate-200 py-2 z-50">
@@ -104,7 +119,11 @@ export default function Header() {
                         <Link
                           key={child.name}
                           href={child.href}
-                          className="block px-4 py-2 text-sm text-slate-700 hover:bg-blue-50 hover:text-primary transition-colors"
+                          className={`block px-4 py-2 text-sm transition-colors ${
+                            isActive(child.href)
+                              ? "text-primary bg-blue-50 font-medium"
+                              : "text-slate-700 hover:bg-blue-50 hover:text-primary"
+                          }`}
                         >
                           {child.name}
                         </Link>
@@ -116,13 +135,24 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  className={`${
                     item.name === "Pay Online"
-                      ? "bg-accent text-white hover:bg-accent-light"
-                      : "text-slate-700 hover:text-primary hover:bg-blue-50"
-                  }`}
+                      ? "px-3 py-2 bg-accent text-white hover:bg-accent-light rounded-md"
+                      : `relative px-3 py-2 ${
+                          isActive(item.href)
+                            ? "text-primary"
+                            : "text-slate-700 hover:text-primary"
+                        }`
+                  } text-sm font-medium transition-colors`}
                 >
                   {item.name}
+                  {item.name !== "Pay Online" && (
+                    <span
+                      className={`absolute -bottom-1.5 left-3 right-3 h-0.5 bg-accent rounded-full transition-transform duration-300 origin-left ${
+                        isActive(item.href) ? "scale-x-100" : "scale-x-0"
+                      }`}
+                    />
+                  )}
                 </Link>
               )
             )}
@@ -149,7 +179,11 @@ export default function Header() {
               <div key={item.name}>
                 <Link
                   href={item.href}
-                  className="block px-4 py-3 text-base font-medium text-slate-700 hover:bg-blue-50 hover:text-primary rounded-md"
+                  className={`block px-4 py-3 text-base font-medium rounded-md ${
+                    isActive(item.href)
+                      ? "text-primary bg-blue-50"
+                      : "text-slate-700 hover:bg-blue-50 hover:text-primary"
+                  }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -158,7 +192,11 @@ export default function Header() {
                   <Link
                     key={child.name}
                     href={child.href}
-                    className="block pl-8 pr-4 py-2 text-sm text-slate-500 hover:bg-blue-50 hover:text-primary rounded-md"
+                    className={`block pl-8 pr-4 py-2 text-sm rounded-md ${
+                      isActive(child.href)
+                        ? "text-primary bg-blue-50 font-medium"
+                        : "text-slate-500 hover:bg-blue-50 hover:text-primary"
+                    }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {child.name}

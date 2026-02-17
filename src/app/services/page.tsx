@@ -7,6 +7,7 @@ import {
   ArrowTopRightOnSquareIcon,
   InformationCircleIcon,
 } from "@heroicons/react/24/outline";
+import { SectionDivider } from "@/components/SectionDivider";
 
 export const metadata: Metadata = {
   title: "Services & Pricing | Atlantic Surgery Center",
@@ -79,10 +80,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="py-16 sm:py-20 bg-slate-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {infoCards.map((card) => (
               <div
                 key={card.title}
@@ -104,7 +105,13 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
+      <SectionDivider from="slate" to="white" variant="curve" />
+
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Pricing Table */}
           <div className="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
             <div className="px-6 sm:px-8 py-6 bg-gradient-to-r from-primary to-primary-light">

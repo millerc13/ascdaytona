@@ -8,6 +8,7 @@ import {
   UserGroupIcon,
   TrophyIcon,
 } from "@heroicons/react/24/outline";
+import { SectionDivider } from "@/components/SectionDivider";
 
 export const metadata: Metadata = {
   title: "About Us | Atlantic Surgery Center",
@@ -83,7 +84,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Image */}
-      <section className="py-20 overflow-hidden">
+      <section className="py-16 sm:py-20 bg-white overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -138,8 +139,10 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <SectionDivider from="white" to="slate" />
+
       {/* Values */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-16 sm:py-20 bg-slate-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
@@ -173,8 +176,10 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <SectionDivider from="slate" to="white" variant="curve" />
+
       {/* Placeholder: Team Photo Section */}
-      <section className="py-20">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">

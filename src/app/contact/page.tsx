@@ -7,6 +7,7 @@ import {
   BuildingOffice2Icon,
   EnvelopeIcon,
 } from "@heroicons/react/24/outline";
+import { SectionDivider } from "@/components/SectionDivider";
 
 export const metadata: Metadata = {
   title: "Contact Us | Atlantic Surgery Center",
@@ -91,8 +92,10 @@ export default function ContactPage() {
         </div>
       </section>
 
+      <SectionDivider from="white" to="slate" variant="curve" />
+
       {/* Map & Details */}
-      <section className="py-16 sm:py-20">
+      <section className="py-16 sm:py-20 bg-slate-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Map */}

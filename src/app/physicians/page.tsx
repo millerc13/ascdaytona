@@ -8,6 +8,7 @@ import {
   SparklesIcon,
   ArrowTopRightOnSquareIcon,
 } from "@heroicons/react/24/outline";
+import { SectionDivider } from "@/components/SectionDivider";
 
 export const metadata: Metadata = {
   title: "Our Physicians | Atlantic Surgery Center",
@@ -193,8 +194,10 @@ export default function PhysiciansPage() {
         </div>
       </section>
 
+      <SectionDivider from="white" to="slate" variant="curve" />
+
       {/* Physician Directory */}
-      <section className="py-16 sm:py-20">
+      <section className="py-16 sm:py-20 bg-slate-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-20">
             {specialties.map((specialty) => (

@@ -7,6 +7,7 @@ import {
   ClockIcon,
   ChatBubbleLeftRightIcon,
 } from "@heroicons/react/24/outline";
+import { SectionDivider } from "@/components/SectionDivider";
 
 export const metadata: Metadata = {
   title: "Pay Online | Atlantic Surgery Center",
@@ -94,8 +95,15 @@ export default function PaymentPage() {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      <SectionDivider from="white" to="slate" />
+
+      <section className="py-16 sm:py-20 bg-slate-100">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           {/* Features */}
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {[
               {
                 icon: CreditCardIcon,

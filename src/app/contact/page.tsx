@@ -39,13 +39,14 @@ const contactMethods = [
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-primary relative overflow-hidden">        <div className="absolute inset-0 opacity-10">
+      {/* Hero Section */}
+      <section className="bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-accent" />
           <div className="absolute -bottom-16 left-1/4 w-72 h-72 rounded-full bg-white" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-  <div className="min-h-[260px] sm:min-h-[300px] flex items-center justify-between gap-12 py-12">
-          <div className="flex items-center justify-between gap-12 ">
+          <div className="min-h-[260px] sm:min-h-[300px] flex items-center justify-between gap-12 py-12">
             <div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
                 Contact Us
@@ -69,7 +70,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Cards */}
+      {/* Contact Cards Section */}
       <section className="relative -mt-8 z-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -82,9 +83,7 @@ export default function ContactPage() {
                   <div className="h-10 w-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
                     <method.icon className="h-5 w-5 text-accent" />
                   </div>
-                  <h3 className="font-semibold text-slate-900">
-                    {method.title}
-                  </h3>
+                  <h3 className="font-semibold text-slate-900">{method.title}</h3>
                 </div>
                 {method.details.map((detail, i) => (
                   <p key={i} className="text-sm text-slate-600">
@@ -108,7 +107,7 @@ export default function ContactPage() {
 
       <SectionDivider from="white" to="slate" />
 
-      {/* Map & Details */}
+      {/* Map & Sidebar Section */}
       <section className="py-16 sm:py-20 bg-slate-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
@@ -133,9 +132,7 @@ export default function ContactPage() {
                   <div className="h-9 w-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
                     <BuildingOffice2Icon className="h-4.5 w-4.5 text-accent" />
                   </div>
-                  <h3 className="font-semibold text-slate-900">
-                    Getting Here
-                  </h3>
+                  <h3 className="font-semibold text-slate-900">Getting Here</h3>
                 </div>
                 <p className="text-sm text-slate-600 leading-relaxed">
                   Atlantic Surgery Center is located on Health Blvd in Daytona

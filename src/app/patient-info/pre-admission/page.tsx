@@ -25,30 +25,35 @@ const checklist = [
 export default function PreAdmissionPage() {
   return (
     <>
-      <section className="bg-primary relative overflow-hidden">        <div className="absolute inset-0 opacity-10">
+      {/* Header Section */}
+      <section className="bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-accent" />
           <div className="absolute -bottom-16 left-1/3 w-64 h-64 rounded-full bg-white" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-  <div className="min-h-[260px] sm:min-h-[300px] flex items-center justify-between gap-12 py-12">
-          <Link
-            href="/patient-info"
-            className="inline-flex items-center gap-1.5 text-blue-200 text-sm hover:text-white transition-colors mb-4"
-          >
-            <ArrowLeftIcon className="h-3.5 w-3.5" />
-            Back to Patient Info
-          </Link>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Pre-Admission Assessment
-          </h1>
-          <p className="mt-4 text-lg text-blue-200 max-w-2xl">
-            Complete this assessment prior to your scheduled surgery.
-          </p>
+          <div className="min-h-[260px] sm:min-h-[300px] flex flex-col gap-6 py-12">
+            <Link
+              href="/patient-info"
+              className="inline-flex items-center gap-1.5 text-blue-200 text-sm hover:text-white transition-colors"
+            >
+              <ArrowLeftIcon className="h-3.5 w-3.5" />
+              Back to Patient Info
+            </Link>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+              Pre-Admission Assessment
+            </h1>
+            <p className="mt-4 text-lg text-blue-200 max-w-2xl">
+              Complete this assessment prior to your scheduled surgery.
+            </p>
+          </div>
         </div>
       </section>
 
+      {/* Main Content */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-10">
+
           {/* Download Card */}
           <div className="bg-gradient-to-br from-slate-50 to-blue-50 border border-slate-200 rounded-2xl p-6 sm:p-10 lg:p-14 text-center shadow-sm">
             <div className="h-20 w-20 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-6">
@@ -99,21 +104,21 @@ export default function PreAdmissionPage() {
               <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-accent" />
               <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-white" />
             </div>
-            <div className="relative">
-            <h3 className="text-lg font-semibold mb-2">
-              Questions About the Form?
-            </h3>
-            <p className="text-blue-200 text-sm mb-6 max-w-md mx-auto">
-              Our pre-admission team is happy to help you complete the
-              assessment or answer any questions you may have.
-            </p>
-            <a
-              href="tel:386-239-0021"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors rounded-xl px-6 py-3 text-sm font-medium"
-            >
-              <PhoneIcon className="h-4 w-4 text-accent-light" />
-              Call (386) 239-0021
-            </a>
+            <div className="relative flex flex-col items-center gap-4">
+              <h3 className="text-lg font-semibold mb-2">
+                Questions About the Form?
+              </h3>
+              <p className="text-blue-200 text-sm mb-6 max-w-md text-center">
+                Our pre-admission team is happy to help you complete the
+                assessment or answer any questions you may have.
+              </p>
+              <a
+                href="tel:386-239-0021"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors rounded-xl px-6 py-3 text-sm font-medium"
+              >
+                <PhoneIcon className="h-4 w-4 text-accent-light" />
+                Call (386) 239-0021
+              </a>
             </div>
           </div>
         </div>

@@ -102,25 +102,28 @@ const steps = [
 export default function WhatToExpectPage() {
   return (
     <>
-      <section className="bg-primary relative overflow-hidden">        <div className="absolute inset-0 opacity-10">
+      {/* Header */}
+      <section className="bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-accent" />
           <div className="absolute -bottom-16 left-1/3 w-64 h-64 rounded-full bg-white" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-  <div className="min-h-[260px] sm:min-h-[300px] flex items-center justify-between gap-12 py-12">
-          <Link
-            href="/patient-info"
-            className="inline-flex items-center gap-1.5 text-blue-200 text-sm hover:text-white transition-colors mb-4"
-          >
-            <ArrowLeftIcon className="h-3.5 w-3.5" />
-            Back to Patient Info
-          </Link>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            What to Expect During Your Visit
-          </h1>
-          <p className="mt-4 text-lg text-blue-200 max-w-2xl">
-            A comprehensive guide to help you prepare for your procedure.
-          </p>
+          <div className="min-h-[260px] sm:min-h-[300px] flex flex-col gap-4 py-12">
+            <Link
+              href="/patient-info"
+              className="inline-flex items-center gap-1.5 text-blue-200 text-sm hover:text-white transition-colors"
+            >
+              <ArrowLeftIcon className="h-3.5 w-3.5" />
+              Back to Patient Info
+            </Link>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+              What to Expect During Your Visit
+            </h1>
+            <p className="mt-2 text-lg text-blue-200 max-w-2xl">
+              A comprehensive guide to help you prepare for your procedure.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -143,6 +146,7 @@ export default function WhatToExpectPage() {
         </div>
       </section>
 
+      {/* Steps */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-12">
           {steps.map((step) => (
@@ -166,6 +170,7 @@ export default function WhatToExpectPage() {
                   </h2>
                 </div>
               </div>
+
               {/* Step Items */}
               <div className="px-6 sm:px-8 py-6">
                 <ul className="space-y-4">
@@ -201,21 +206,21 @@ export default function WhatToExpectPage() {
               <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-white" />
             </div>
             <div className="relative">
-            <h3 className="text-xl font-semibold mb-3">
-              Thank You for Trusting Us with Your Care
-            </h3>
-            <p className="text-blue-200 text-sm max-w-lg mx-auto mb-6">
-              We want you to have an excellent experience at Atlantic Surgery
-              Center, and a speedy recovery. Please speak up if you have
-              questions or concerns about your care.
-            </p>
-            <a
-              href="tel:386-239-0021"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors rounded-xl px-6 py-3 text-sm font-medium"
-            >
-              <PhoneIcon className="h-4 w-4 text-accent-light" />
-              (386) 239-0021 — Mon–Fri, 8 AM – 5 PM
-            </a>
+              <h3 className="text-xl font-semibold mb-3">
+                Thank You for Trusting Us with Your Care
+              </h3>
+              <p className="text-blue-200 text-sm max-w-lg mx-auto mb-6">
+                We want you to have an excellent experience at Atlantic Surgery
+                Center, and a speedy recovery. Please speak up if you have
+                questions or concerns about your care.
+              </p>
+              <a
+                href="tel:386-239-0021"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors rounded-xl px-6 py-3 text-sm font-medium"
+              >
+                <PhoneIcon className="h-4 w-4 text-accent-light" />
+                (386) 239-0021 — Mon–Fri, 8 AM – 5 PM
+              </a>
             </div>
           </div>
         </div>

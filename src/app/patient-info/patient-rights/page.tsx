@@ -93,31 +93,36 @@ const contacts = [
 export default function PatientRightsPage() {
   return (
     <>
-      <section className="bg-primary relative overflow-hidden">        <div className="absolute inset-0 opacity-10">
+      {/* Header Section */}
+      <section className="bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-accent" />
           <div className="absolute -bottom-16 left-1/3 w-64 h-64 rounded-full bg-white" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-  <div className="min-h-[260px] sm:min-h-[300px] flex items-center justify-between gap-12 py-12">
-          <Link
-            href="/patient-info"
-            className="inline-flex items-center gap-1.5 text-blue-200 text-sm hover:text-white transition-colors mb-4"
-          >
-            <ArrowLeftIcon className="h-3.5 w-3.5" />
-            Back to Patient Info
-          </Link>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Patient Rights & Responsibilities
-          </h1>
-          <p className="mt-4 text-lg text-blue-200 max-w-2xl">
-            We are committed to ensuring every patient is treated with dignity
-            and respect.
-          </p>
+          <div className="min-h-[260px] sm:min-h-[300px] flex flex-col gap-4 py-12">
+            <Link
+              href="/patient-info"
+              className="inline-flex items-center gap-1.5 text-blue-200 text-sm hover:text-white transition-colors"
+            >
+              <ArrowLeftIcon className="h-3.5 w-3.5" />
+              Back to Patient Info
+            </Link>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+              Patient Rights & Responsibilities
+            </h1>
+            <p className="mt-2 text-lg text-blue-200 max-w-2xl">
+              We are committed to ensuring every patient is treated with dignity
+              and respect.
+            </p>
+          </div>
         </div>
       </section>
 
+      {/* Main Content */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-16">
+
           {/* Rights */}
           <div>
             <div className="flex items-center gap-3 mb-8">
@@ -125,12 +130,8 @@ export default function PatientRightsPage() {
                 <ShieldCheckIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-slate-900">
-                  Your Rights
-                </h2>
-                <p className="text-sm text-slate-500">
-                  As a patient, you have the right to:
-                </p>
+                <h2 className="text-2xl font-bold text-slate-900">Your Rights</h2>
+                <p className="text-sm text-slate-500">As a patient, you have the right to:</p>
               </div>
             </div>
             <div className="space-y-3">
@@ -142,9 +143,7 @@ export default function PatientRightsPage() {
                   <span className="flex items-center justify-center h-7 w-7 rounded-lg bg-accent/10 text-accent text-xs font-bold shrink-0 mt-0.5">
                     {i + 1}
                   </span>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {right}
-                  </p>
+                  <p className="text-slate-600 text-sm leading-relaxed">{right}</p>
                 </div>
               ))}
             </div>
@@ -157,12 +156,8 @@ export default function PatientRightsPage() {
                 <HandRaisedIcon className="h-6 w-6 text-teal-600" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-slate-900">
-                  Your Responsibilities
-                </h2>
-                <p className="text-sm text-slate-500">
-                  As a patient, you are responsible for:
-                </p>
+                <h2 className="text-2xl font-bold text-slate-900">Your Responsibilities</h2>
+                <p className="text-sm text-slate-500">As a patient, you are responsible for:</p>
               </div>
             </div>
             <div className="space-y-3">
@@ -174,9 +169,7 @@ export default function PatientRightsPage() {
                   <span className="flex items-center justify-center h-7 w-7 rounded-lg bg-teal-50 text-teal-700 text-xs font-bold shrink-0 mt-0.5">
                     {i + 1}
                   </span>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {resp}
-                  </p>
+                  <p className="text-slate-600 text-sm leading-relaxed">{resp}</p>
                 </div>
               ))}
             </div>
@@ -189,16 +182,11 @@ export default function PatientRightsPage() {
                 <BuildingOffice2Icon className="h-6 w-6 text-amber-600" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-slate-900">
-                  Questions, Complaints, or Grievances
-                </h2>
+                <h2 className="text-2xl font-bold text-slate-900">Questions, Complaints, or Grievances</h2>
               </div>
             </div>
-            <p className="text-slate-600 mb-8 sm:pl-15">
-              If you have any questions regarding your rights or
-              responsibilities, complaints or grievances, you may speak to the
-              Administrator or management team. The following contact information
-              is provided for your convenience:
+            <p className="text-slate-600 mb-8">
+              If you have any questions regarding your rights or responsibilities, complaints or grievances, you may speak to the Administrator or management team. The following contact information is provided for your convenience:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {contacts.map((contact) => (
@@ -206,19 +194,9 @@ export default function PatientRightsPage() {
                   key={contact.name}
                   className="bg-white rounded-xl p-5 border border-slate-200 hover:shadow-sm transition-shadow"
                 >
-                  <p className="font-semibold text-slate-900 text-sm">
-                    {contact.name}
-                  </p>
-                  {contact.org && (
-                    <p className="text-xs text-slate-500 mt-0.5">
-                      {contact.org}
-                    </p>
-                  )}
-                  {contact.address && (
-                    <p className="text-xs text-slate-500 mt-1">
-                      {contact.address}
-                    </p>
-                  )}
+                  <p className="font-semibold text-slate-900 text-sm">{contact.name}</p>
+                  {contact.org && <p className="text-xs text-slate-500 mt-0.5">{contact.org}</p>}
+                  {contact.address && <p className="text-xs text-slate-500 mt-1">{contact.address}</p>}
                   <a
                     href={`tel:${contact.phone}`}
                     className="inline-flex items-center gap-1.5 text-sm text-primary font-medium hover:underline mt-3"
@@ -230,6 +208,7 @@ export default function PatientRightsPage() {
               ))}
             </div>
           </div>
+
         </div>
       </section>
     </>

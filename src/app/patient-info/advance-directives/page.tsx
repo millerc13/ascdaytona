@@ -17,30 +17,35 @@ export const metadata: Metadata = {
 export default function AdvanceDirectivesPage() {
   return (
     <>
-      <section className="bg-primary relative overflow-hidden">        <div className="absolute inset-0 opacity-10">
+      {/* Header Section */}
+      <section className="bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-accent" />
           <div className="absolute -bottom-16 left-1/3 w-64 h-64 rounded-full bg-white" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-  <div className="min-h-[260px] sm:min-h-[300px] flex items-center justify-between gap-12 py-12">
-          <Link
-            href="/patient-info"
-            className="inline-flex items-center gap-1.5 text-blue-200 text-sm hover:text-white transition-colors mb-4"
-          >
-            <ArrowLeftIcon className="h-3.5 w-3.5" />
-            Back to Patient Info
-          </Link>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Advance Directives
-          </h1>
-          <p className="mt-4 text-lg text-blue-200 max-w-2xl">
-            Understanding our policy on advance directives and living wills.
-          </p>
+          <div className="min-h-[260px] sm:min-h-[300px] flex flex-col gap-4 py-12">
+            <Link
+              href="/patient-info"
+              className="inline-flex items-center gap-1.5 text-blue-200 text-sm hover:text-white transition-colors"
+            >
+              <ArrowLeftIcon className="h-3.5 w-3.5" />
+              Back to Patient Info
+            </Link>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+              Advance Directives
+            </h1>
+            <p className="mt-2 text-lg text-blue-200 max-w-2xl">
+              Understanding our policy on advance directives and living wills.
+            </p>
+          </div>
         </div>
       </section>
 
+      {/* Main Content */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-8">
+
           {/* Critical Notice */}
           <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 sm:p-8">
             <div className="flex items-start gap-4">
@@ -54,7 +59,7 @@ export default function AdvanceDirectivesPage() {
                 <p className="text-slate-700 leading-relaxed">
                   It is the policy of Atlantic Surgery Center to transfer any
                   patient requiring resuscitation to the hospital. The hospital
-                  can determine when to implement the advance directive/living
+                  determines when to implement the advance directive/living
                   will once notified.
                 </p>
               </div>
@@ -67,9 +72,7 @@ export default function AdvanceDirectivesPage() {
               <div className="h-10 w-10 rounded-lg bg-blue-100 flex items-center justify-center shrink-0">
                 <HeartIcon className="h-5 w-5 text-blue-600" />
               </div>
-              <h2 className="text-lg font-semibold text-slate-900">
-                Our Policy
-              </h2>
+              <h2 className="text-lg font-semibold text-slate-900">Our Policy</h2>
             </div>
             <div className="px-6 sm:px-8 py-6 space-y-5 text-slate-600 leading-relaxed text-sm">
               <p>
@@ -80,7 +83,7 @@ export default function AdvanceDirectivesPage() {
               </p>
               <p>
                 If a patient should suffer cardiac or respiratory arrest or any
-                life threatening condition, the patient will be transferred to a
+                life-threatening condition, the patient will be transferred to a
                 more acute level of care, that is, the hospital emergency room.
               </p>
               <p>
@@ -90,10 +93,9 @@ export default function AdvanceDirectivesPage() {
                 additional information.
               </p>
               <p>
-                It is the policy of the Center to transfer any patient requiring
-                resuscitation to the hospital. The hospital can determine when to
-                implement the advance directive/living will once the patient or
-                others notify them of the advance directive/living will.
+                The Center transfers any patient requiring resuscitation to the
+                hospital. The hospital determines when to implement the
+                advance directive/living will once notified.
               </p>
             </div>
           </div>
@@ -102,13 +104,10 @@ export default function AdvanceDirectivesPage() {
           <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 flex items-start gap-4">
             <InformationCircleIcon className="h-6 w-6 text-blue-600 shrink-0 mt-0.5" />
             <p className="text-sm text-slate-700 leading-relaxed">
-              <span className="font-semibold text-slate-900">
-                Please note:
-              </span>{" "}
+              <span className="font-semibold text-slate-900">Please note:</span>{" "}
               Patients who disagree with this policy must address the issue with
-              the attending physician prior to signing the form acknowledging an
-              understanding of the policy regarding advance directives/living
-              wills.
+              the attending physician prior to signing the form acknowledging
+              understanding of the advance directives/living wills policy.
             </p>
           </div>
 
@@ -118,21 +117,22 @@ export default function AdvanceDirectivesPage() {
               <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-accent" />
               <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-white" />
             </div>
-            <div className="relative">
-            <h3 className="text-lg font-semibold mb-2">Have Questions?</h3>
-            <p className="text-blue-200 text-sm mb-6 max-w-md mx-auto">
-              If you have questions about advance directives or our policy,
-              please do not hesitate to contact us.
-            </p>
-            <a
-              href="tel:386-239-0021"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors rounded-xl px-6 py-3 text-sm font-medium"
-            >
-              <PhoneIcon className="h-4 w-4 text-accent-light" />
-              Call (386) 239-0021
-            </a>
+            <div className="relative flex flex-col items-center gap-4">
+              <h3 className="text-lg font-semibold mb-2">Have Questions?</h3>
+              <p className="text-blue-200 text-sm mb-6 max-w-md text-center">
+                If you have questions about advance directives or our policy,
+                please do not hesitate to contact us.
+              </p>
+              <a
+                href="tel:386-239-0021"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors rounded-xl px-6 py-3 text-sm font-medium"
+              >
+                <PhoneIcon className="h-4 w-4 text-accent-light" />
+                Call (386) 239-0021
+              </a>
             </div>
           </div>
+
         </div>
       </section>
     </>

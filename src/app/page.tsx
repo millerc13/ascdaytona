@@ -122,7 +122,7 @@ export default function Home() {
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/70" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-20 lg:py-24">
+<div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10 lg:pt-12 pb-10 sm:pb-20 lg:pb-24">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6">
               <svg

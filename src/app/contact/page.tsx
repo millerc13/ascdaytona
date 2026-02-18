@@ -39,19 +39,33 @@ const contactMethods = [
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-primary py-16 sm:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      <section className="bg-primary relative overflow-hidden">        <div className="absolute inset-0 opacity-10">
           <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-accent" />
           <div className="absolute -bottom-16 left-1/4 w-72 h-72 rounded-full bg-white" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Contact Us
-          </h1>
-          <p className="mt-4 text-lg text-blue-200 max-w-2xl">
-            We&apos;re here to help. Reach out to us with any questions about
-            your upcoming procedure.
-          </p>
+  <div className="min-h-[260px] sm:min-h-[300px] flex items-center justify-between gap-12 py-12">
+          <div className="flex items-center justify-between gap-12 ">
+            <div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+                Contact Us
+              </h1>
+              <p className="mt-4 text-lg text-blue-200 max-w-2xl">
+                We&apos;re here to help. Reach out to us with any questions about
+                your upcoming procedure.
+              </p>
+            </div>
+            <div className="hidden lg:block shrink-0 opacity-15">
+              <Image
+                src="/asc-logo-transparent.png"
+                alt=""
+                width={240}
+                height={100}
+                className="h-28 w-auto brightness-0 invert"
+                aria-hidden="true"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -92,7 +106,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <SectionDivider from="white" to="slate" variant="curve" />
+      <SectionDivider from="white" to="slate" />
 
       {/* Map & Details */}
       <section className="py-16 sm:py-20 bg-slate-100">

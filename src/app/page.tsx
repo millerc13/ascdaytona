@@ -318,8 +318,6 @@ export default function Home() {
         </div>
       </section>
 
-      <SectionDivider from="slate" to="primary" variant="curve" />
-
       {/* CTA */}
       <section className="py-16 sm:py-24 bg-gradient-to-br from-primary to-primary-light relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">

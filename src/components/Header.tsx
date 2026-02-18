@@ -46,7 +46,7 @@ export default function Header() {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       {/* Top bar */}
       <div className="bg-primary text-white text-xs sm:text-sm">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-between items-center py-2">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-center sm:justify-between items-center py-2">
           <div className="flex items-center gap-4 sm:gap-6">
             <a
               href="https://maps.google.com/?q=541+Health+Blvd+Daytona+Beach+FL+32114"

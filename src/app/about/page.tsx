@@ -48,26 +48,43 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      {/* Hero Banner */}
-      <section className="bg-primary py-16 sm:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+            {/* Hero Banner */}
+      <section className="bg-primary relative overflow-hidden">        <div className="absolute inset-0 opacity-10">
           <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-accent" />
-          <div className="absolute bottom-0 left-1/4 w-72 h-72 rounded-full bg-white" />
+          <div className="absolute -bottom-16 left-1/4 w-72 h-72 rounded-full bg-white" />
         </div>
+
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            About Atlantic Surgery Center
-          </h1>
-          <p className="mt-4 text-lg text-blue-200 max-w-2xl">
-            A tradition of excellence in outpatient surgical care since 1994.
-          </p>
+  <div className="min-h-[260px] sm:min-h-[300px] flex items-center justify-between gap-12 py-12">
+          <div className="flex items-center justify-between gap-12">
+            <div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+                About Atlantic Surgery Center
+              </h1>
+              <p className="mt-4 text-lg text-blue-200 max-w-2xl">
+                A tradition of excellence in outpatient surgical care since 1994.
+              </p>
+            </div>
+
+            <div className="hidden lg:block shrink-0 opacity-15">
+              <Image
+                src="/asc-logo-transparent.png"
+                alt=""
+                width={240}
+                height={100}
+                className="h-28 w-auto brightness-0 invert"
+                aria-hidden="true"
+              />
+            </div>
+          </div>
+        </div>
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="relative -mt-8 z-10">
+      {/* Stats Card (Matches Patient Info Pattern) */}
+      <section className="relative -mt-6 z-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 border border-slate-100">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <stat.icon className="h-6 w-6 text-accent mx-auto mb-2" />
@@ -82,6 +99,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
 
       {/* Mission & Image */}
       <section className="py-16 sm:py-20 bg-white overflow-hidden">
@@ -176,7 +194,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <SectionDivider from="slate" to="white" variant="curve" />
+      <SectionDivider from="slate" to="white" />
 
       {/* Placeholder: Team Photo Section */}
       <section className="py-16 sm:py-20 bg-white">

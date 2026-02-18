@@ -93,12 +93,12 @@ const contacts = [
 export default function PatientRightsPage() {
   return (
     <>
-      <section className="bg-primary py-16 sm:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      <section className="bg-primary relative overflow-hidden">        <div className="absolute inset-0 opacity-10">
           <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-accent" />
           <div className="absolute -bottom-16 left-1/3 w-64 h-64 rounded-full bg-white" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <div className="min-h-[260px] sm:min-h-[300px] flex items-center justify-between gap-12 py-12">
           <Link
             href="/patient-info"
             className="inline-flex items-center gap-1.5 text-blue-200 text-sm hover:text-white transition-colors mb-4"

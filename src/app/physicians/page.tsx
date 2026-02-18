@@ -151,28 +151,44 @@ function PhysicianCard({
 export default function PhysiciansPage() {
   return (
     <>
-      {/* Hero Banner */}
-      <section className="bg-primary py-16 sm:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+          {/* Hero Banner */}
+      <section className="bg-primary relative overflow-hidden">        <div className="absolute inset-0 opacity-10">
           <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-accent" />
           <div className="absolute -bottom-16 left-1/4 w-72 h-72 rounded-full bg-white" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Our Physicians
-          </h1>
-          <p className="mt-4 text-lg text-blue-200 max-w-2xl">
-            A tradition of excellence — our physicians are recognized locally
-            for their medical expertise and have held key positions in the
-            medical community at both the state and national level.
-          </p>
+  <div className="min-h-[260px] sm:min-h-[300px] flex items-center justify-between gap-12 py-12">
+          <div className="flex items-center justify-between gap-12">
+            <div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+                Our Physicians
+              </h1>
+              <p className="mt-4 text-lg text-blue-200 max-w-2xl">
+                A tradition of excellence — our physicians are recognized locally
+                for their medical expertise and have held key positions in the
+                medical community at both the state and national level.
+              </p>
+            </div>
+
+            <div className="hidden lg:block shrink-0 opacity-15">
+              <Image
+                src="/asc-logo-transparent.png"
+                alt=""
+                width={240}
+                height={100}
+                className="h-28 w-auto brightness-0 invert"
+                aria-hidden="true"
+              />
+            </div>
+          </div>
+        </div>
         </div>
       </section>
 
-      {/* Team Photo */}
-      <section className="relative">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 -mt-8">
-          <div className="relative rounded-2xl overflow-hidden shadow-xl h-64 sm:h-80 lg:h-96">
+      {/* Team Photo (Matches Patient Info Overlap Style) */}
+      <section className="relative -mt-6 z-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-2xl overflow-hidden shadow-lg h-64 sm:h-80 lg:h-96 border border-slate-100">
             <Image
               src="/team-photo.jpeg"
               alt="Atlantic Surgery Center Medical Team"
@@ -180,21 +196,12 @@ export default function PhysiciansPage() {
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-              <p className="text-white text-lg sm:text-xl font-semibold">
-                Our Dedicated Medical Team
-              </p>
-              <p className="text-blue-100 text-sm mt-1">
-                Board-certified surgeons and experienced staff committed to your
-                care
-              </p>
-            </div>
           </div>
         </div>
       </section>
 
-      <SectionDivider from="white" to="slate" variant="curve" />
+
+      <SectionDivider from="white" to="slate" />
 
       {/* Physician Directory */}
       <section className="py-16 sm:py-20 bg-slate-100">
